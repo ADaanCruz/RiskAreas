@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Risk Areas</string>
+    <string name="app_name_mayus">RISK AREAS</string>
+
+    <string name="content_description_login">login</string>
+
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+
+    <string name="sign_in">Iniciar sesión</string>
+
+    <string name="abcABC">aábcdeéfghiíjklmnñoópqrstuúvwxyzAÁBCDEÉFGHIÍJKLMNÑOÓPQRSTUÚVWXYZ</string>
+    <string name="abcABC123">aábcdeéfghiíjklmnñoópqrstuúvwxyzAÁBCDEÉFGHIÍJKLMNÑOÓPQRSTUÚVWXYZ1234567890</string>
+
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="credits">Créditos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="areas">Zonas</string>
+    <string name="search_for">Buscar por:</string>
+    <string name="municipalities">Municipios</string>
+    <string name="igecem">IGECEM</string>
+    <string name="risks">Riesgos</string>
+    <string name="all">Todos</string>
+    <string name="order_by">Ordenar de:</string>
+</resources>

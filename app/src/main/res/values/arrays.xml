@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="risk">
+        <item>Selecciona un riesgo</item>
+        <item>Inundación</item>
+        <item>Deslave</item>
+        <item>Zona sísmica</item>
+        <item>Incendio forestal</item>
+        <item>Zona volcánica</item>
+        <item>Derrumbes</item>
+    </string-array>
+    <string-array name="alphabet">
+        <item>Selecciona uno</item>
+        <item>A-C</item>
+        <item>D-F</item>
+        <item>G-I</item>
+        <item>J-L</item>
+        <item>M-Ñ</item>
+        <item>O-Q</item>
+        <item>R-T</item>
+        <item>U-W</item>
+        <item>X-Z</item>
+    </string-array>
+</resources>
