@@ -11,40 +11,36 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
 import java.util.Objects;
 
 public class NavigationActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
     private Fragment fragment = new AreaFragment();
+    private Bundle bundle = new Bundle();
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    selectedFragment = fragment;
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_container,
-                            selectedFragment).commit();
-                    return true;
+                    fragment = new AreaFragment();
+                    break;
                 case R.id.navigation_dashboard:
-                    selectedFragment = new MunicipalityFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_container,
-                            selectedFragment).commit();
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
+                    fragment = new MunicipalityFragment();
+                    break;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
+                    fragment = null;
+                    break;
             }
-            return false;
+            if (fragment != null) {
+                loadBundle(fragment);
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_container,
+                        fragment).commit();
+            }
+            return true;
         }
     };
 
@@ -54,9 +50,11 @@ public class NavigationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_navigation);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
+        loadBundle(fragment);
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_container,
+                fragment).commit();
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
-        mTextMessage.setVisibility(View.GONE);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
@@ -64,5 +62,10 @@ public class NavigationActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(NavigationActivity.this, MainActivity.class));
+    }
+
+    private void loadBundle(Fragment fragment) {
+        bundle.putBoolean("admin", getIntent().getBooleanExtra("admin", false));
+        fragment.setArguments(bundle);
     }
 }

@@ -51,9 +51,10 @@ public class SQLite {
         content.put("significance", municipality.getSignificance());
         content.put("header", municipality.getHeader());
         content.put("area", municipality.getArea());
-        content.put("latitude", municipality.getLatitude());
         content.put("clime", municipality.getClime());
-        content.put("location", municipality.getLocation());
+        content.put("altitude", municipality.getAltitude());
+        content.put("latitude", municipality.getLatitude());
+        content.put("longitude", municipality.getLongitude());
 
         return (db.insert("municipalities", null, content) != (-1));
     }
@@ -102,9 +103,10 @@ public class SQLite {
         content.put("significance", municipality.getSignificance());
         content.put("header", municipality.getHeader());
         content.put("area", municipality.getArea());
-        content.put("latitude", municipality.getLatitude());
         content.put("clime", municipality.getClime());
-        content.put("location", municipality.getLocation());
+        content.put("altitude", municipality.getAltitude());
+        content.put("latitude", municipality.getLatitude());
+        content.put("longitude", municipality.getLongitude());
 
         int cant = db.update("municipilities", content, "id="+municipality.getId(), null);
         if (cant == 1) {
@@ -128,6 +130,10 @@ public class SQLite {
         }
     }
 
+    public Cursor getMunicipalities() {
+        return db.rawQuery("SELECT * FROM municipalities", null);
+    }
+
     public ArrayList<Municipality> getMunicipalities(Cursor cursor) {
         ArrayList<Municipality> list = new ArrayList<>();
         Municipality municipality;
@@ -141,13 +147,18 @@ public class SQLite {
                         cursor.getString(4),
                         cursor.getString(5),
                         cursor.getString(6),
-                        cursor.getString(7)
+                        cursor.getString(7),
+                        cursor.getString(8)
                 );
 
                 list.add(municipality);
             } while (cursor.moveToNext());
         }
         return list;
+    }
+
+    public Cursor getAreas() {
+        return db.rawQuery("SELECT * FROM areas", null);
     }
 
     public ArrayList<Area> getAreas(Cursor cursor) {
@@ -165,14 +176,6 @@ public class SQLite {
             } while (cursor.moveToNext());
         }
         return list;
-    }
-
-    public Cursor getMunicipalities() {
-        return db.rawQuery("SELECT * FROM municipalities", null);
-    }
-
-    public Cursor getAreas() {
-        return db.rawQuery("SELECT * FROM areas", null);
     }
 
     public Cursor getMunicipality(int id) {

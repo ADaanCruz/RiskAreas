@@ -17,9 +17,10 @@ public class Sql extends SQLiteOpenHelper {
                     "significance TEXT NOT NULL," +
                     "header TEXT NOT NULL," +
                     "area TEXT NOT NULL," +
-                    "altitude TEXT NOT NULL," +
                     "clime TEXT NOT NULL," +
-                    "location TEXT NOT NULL" +
+                    "altitude TEXT NOT NULL," +
+                    "latitude TEXT NOT NULL," +
+                    "longitude TEXT NOT NULL" +
             ")";
     private final String table_areas =
             "CREATE TABLE areas (" +

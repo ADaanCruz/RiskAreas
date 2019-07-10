@@ -49,6 +49,7 @@
             app:layout_constraintTop_toTopOf="@+id/municipalities_search_for" />
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -68,9 +69,9 @@
                     android:id="@+id/municipalities_order_by"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/order_by"/>
+                    android:paddingTop="10dp"
+                    android:text="@string/order_by" />
 
                 <Spinner
                     android:id="@+id/municipalities_range"
@@ -91,6 +92,36 @@
                     android:hint="@string/igecem" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <TextView
+                android:id="@+id/municipalities_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/wait" />
+
+            <ProgressBar
+                android:id="@+id/municipalities_progress"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ListView
+                android:id="@+id/municipalities_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 

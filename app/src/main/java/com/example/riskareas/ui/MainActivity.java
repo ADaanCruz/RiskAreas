@@ -51,10 +51,15 @@ public class MainActivity extends AppCompatActivity {
                 if (validations.areNotEmpty()) {
                     String usuario = user.getText().toString().toLowerCase();
                     String constrasenia = password.getText().toString().toLowerCase();
-                    if ((usuario.equals("administrador") && constrasenia.equals("administrador")) ||
-                            (usuario.equals("consultor") && constrasenia.equals("consultor"))) {
+                    Intent intent = new Intent(MainActivity.this, NavigationActivity.class);
+                    if (usuario.equals("admin") && constrasenia.equals("admin")) {
+                        intent.putExtra("admin", true);
                         finish();
-                        startActivity(new Intent(MainActivity.this, NavigationActivity.class));
+                        startActivity(intent);
+                    } else if ((usuario.equals("consultor") && constrasenia.equals("consultor"))) {
+                        intent.putExtra("admin", false);
+                        finish();
+                        startActivity(intent);
                     } else {
                         Snackbar.make(view,
                                 "Usuario y/o contraseña incorrectos.",

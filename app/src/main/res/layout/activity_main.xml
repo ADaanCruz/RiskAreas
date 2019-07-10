@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp">
+        android:padding="30dp">
 
         <ImageView
             android:id="@+id/login_logo"
@@ -72,6 +72,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_password"
                 style="@style/EditTextInTextInput"
+                android:inputType="textPassword"
                 android:digits="@string/abcABC123"
                 android:hint="@string/password" />
 

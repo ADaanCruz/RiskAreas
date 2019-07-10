@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.CreateEditMunicipalityActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/createM_title"
+            style="@style/TextTitle"
+            android:text="@string/add_municipality"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_createM_igecem"
+            style="@style/TextInputLarge"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createM_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createM_igecem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/_123"
+                android:maxLength="5"
+                android:hint="@string/igecem" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_createM_name"
+            style="@style/TextInputLarge"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_createM_igecem">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createM_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/abcABC"
+                android:maxLength="20"
+                android:hint="@string/name" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_createM_significance"
+            style="@style/TextInputLarge"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_createM_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createM_significance"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:hint="@string/significance"
+                android:inputType="textMultiLine" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_createM_header"
+            style="@style/TextInputLarge"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_createM_significance">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createM_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/abcABC"
+                android:hint="@string/header" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_createM_area"
+            style="@style/TextInputLarge"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/textInput_createM_longitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_createM_header">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createM_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/_123"
+                android:hint="@string/superfice" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_createM_longitude"
+            style="@style/TextInputLarge"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textInput_createM_area"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_createM_header">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createM_longitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/_123"
+                android:hint="@string/logitude" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/createM_clime"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_createM_area"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_createM_altitude"
+            style="@style/TextInputLarge"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/textInput_createM_latitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createM_clime">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createM_altitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/_123"
+                android:hint="@string/altitude" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInput_createM_latitude"
+            style="@style/TextInputLarge"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textInput_createM_altitude"
+            app:layout_constraintTop_toBottomOf="@+id/createM_clime">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createM_latitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/_123maps"
+                android:hint="@string/latitude" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_createM_latitude">
+
+            <Button
+                android:id="@+id/createM_add"
+                style="@style/ButtonPrimary"
+                android:text="@string/add"/>
+
+            <Button
+                android:id="@+id/createM_save"
+                style="@style/ButtonPrimary"
+                android:text="@string/save"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

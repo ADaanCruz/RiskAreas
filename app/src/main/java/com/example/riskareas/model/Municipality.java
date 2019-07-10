@@ -7,23 +7,25 @@ public class Municipality {
     private String significance;
     private String header;
     private String area;
-    private String latitude;
     private String clime;
-    private String location;
+    private String altitude;
+    private String latitude;
+    private String longitude;
 
     public Municipality() {
     }
 
     public Municipality(int id, String name, String significance, String header, String area,
-                        String latitude, String clime, String location) {
+                        String clime, String altitude, String latitude, String longitude) {
         this.id = id;
         this.name = name;
         this.significance = significance;
         this.header = header;
         this.area = area;
-        this.latitude = latitude;
         this.clime = clime;
-        this.location = location;
+        this.altitude = altitude;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public int getId() {
@@ -66,14 +68,6 @@ public class Municipality {
         this.area = area;
     }
 
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
     public String getClime() {
         return clime;
     }
@@ -82,11 +76,27 @@ public class Municipality {
         this.clime = clime;
     }
 
-    public String getLocation() {
-        return location;
+    public String getAltitude() {
+        return altitude;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setAltitude(String altitude) {
+        this.altitude = altitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }
